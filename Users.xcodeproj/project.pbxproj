@@ -14,6 +14,7 @@
 		A0B3479C24A782A7008233A2 /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0B3479A24A782A7008233A2 /* Users.xcdatamodeld */; };
 		A0B3479E24A782AB008233A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B3479D24A782AB008233A2 /* Assets.xcassets */; };
 		A0B347A124A782AB008233A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B3479F24A782AB008233A2 /* LaunchScreen.storyboard */; };
+		A0B347AA24A78513008233A2 /* UsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B347A924A78513008233A2 /* UsersAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A0B3479D24A782AB008233A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0B347A024A782AB008233A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0B347A224A782AB008233A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0B347A924A78513008233A2 /* UsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		A0B3479024A782A7008233A2 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				A0B347A824A784FB008233A2 /* UsersAPI */,
 				A0B3479124A782A7008233A2 /* AppDelegate.swift */,
 				A0B3479324A782A7008233A2 /* SceneDelegate.swift */,
 				A0B3479524A782A7008233A2 /* ViewController.swift */,
@@ -68,6 +71,14 @@
 				A0B3479A24A782A7008233A2 /* Users.xcdatamodeld */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		A0B347A824A784FB008233A2 /* UsersAPI */ = {
+			isa = PBXGroup;
+			children = (
+				A0B347A924A78513008233A2 /* UsersAPI.swift */,
+			);
+			path = UsersAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			files = (
 				A0B3479C24A782A7008233A2 /* Users.xcdatamodeld in Sources */,
 				A0B3479624A782A7008233A2 /* ViewController.swift in Sources */,
+				A0B347AA24A78513008233A2 /* UsersAPI.swift in Sources */,
 				A0B3479224A782A7008233A2 /* AppDelegate.swift in Sources */,
 				A0B3479424A782A7008233A2 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8BCKJ57FF;
 				INFOPLIST_FILE = Users/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V8BCKJ57FF;
 				INFOPLIST_FILE = Users/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
