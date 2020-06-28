@@ -14,6 +14,7 @@ class UsersListViewController: UITableViewController {
     let viewModel = UsersListViewModel()
     var searchController = UISearchController(searchResultsController: nil)
     var currentSearchTask: URLSessionTask?
+    private let loader = UIActivityIndicatorView(style: .large)
 
     // MARK: - Functions
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class UsersListViewController: UITableViewController {
         setupNavigationBar(withTitle: "Users App", and: searchController)
         configureTableView()
         registerUserTableViewCell()
+        getUsersList()
     }
 
     // MARK: - Custom Functions
@@ -42,6 +44,17 @@ class UsersListViewController: UITableViewController {
     private func setupSearchController() {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
+    }
+
+    private func getUsersList() {
+        show(indicator: loader)
+        viewModel.getUserList { [weak self] in
+            guard let self = self else { return }
+            self.hide(indicator: self.loader)
+            self.tableView.reloadData()
+        } onFailure: { error in
+            self.hide(indicator: self.loader)
+        }
     }
 
 }

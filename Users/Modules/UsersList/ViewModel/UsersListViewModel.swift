@@ -18,7 +18,7 @@ class UsersListViewModel {
 
     // MARK: - Inits
     init() {
-        initUserWithMock()
+        // initUserWithMock()
     }
 
     // MARK: - Custom Functions
@@ -49,6 +49,7 @@ class UsersListViewModel {
                     users.forEach { self.filteredUsers.append($0) }
                     users.forEach { self.users.append($0) }
                 }
+                onComplete()
             case .failure(let error):
                 onFailure(error)
             }

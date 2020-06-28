@@ -31,6 +31,7 @@
 		A0B347CF24A7E679008233A2 /* UsersListConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B347CE24A7E679008233A2 /* UsersListConnection.swift */; };
 		A0B347D124A8D2F7008233A2 /* UITableView+EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B347D024A8D2F6008233A2 /* UITableView+EmptyView.swift */; };
 		A0B347D324A8D44D008233A2 /* UsersEmptyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B347D224A8D44C008233A2 /* UsersEmptyList.xib */; };
+		A0B347D524A93B68008233A2 /* UIViewController+LoaderIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B347D424A93B68008233A2 /* UIViewController+LoaderIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		A0B347CE24A7E679008233A2 /* UsersListConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListConnection.swift; sourceTree = "<group>"; };
 		A0B347D024A8D2F6008233A2 /* UITableView+EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyView.swift"; sourceTree = "<group>"; };
 		A0B347D224A8D44C008233A2 /* UsersEmptyList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersEmptyList.xib; sourceTree = "<group>"; };
+		A0B347D424A93B68008233A2 /* UIViewController+LoaderIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoaderIndicator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				A0B347C224A7AC00008233A2 /* UITableView+RegisterCell.swift */,
 				A0B347D024A8D2F6008233A2 /* UITableView+EmptyView.swift */,
 				A0B347C624A7B459008233A2 /* UIViewController+NavigationBar.swift */,
+				A0B347D424A93B68008233A2 /* UIViewController+LoaderIndicator.swift */,
 				A0B347C824A7D7AB008233A2 /* UIView+DropShadowView.swift */,
 				A0B347CA24A7D892008233A2 /* UIView+BorderedView.swift */,
 			);
@@ -270,6 +273,7 @@
 				A0B347C524A7B2B6008233A2 /* UsersList+SearchBar.swift in Sources */,
 				A0B347C024A7A772008233A2 /* UsersListViewModel.swift in Sources */,
 				A0B347B624A79925008233A2 /* UsersList.swift in Sources */,
+				A0B347D524A93B68008233A2 /* UIViewController+LoaderIndicator.swift in Sources */,
 				A0B347B924A79A88008233A2 /* UserTableViewCell.swift in Sources */,
 				A0B347BE24A7A4E6008233A2 /* UsersList+DataSource.swift in Sources */,
 				A0B347AA24A78513008233A2 /* UsersAPI.swift in Sources */,
