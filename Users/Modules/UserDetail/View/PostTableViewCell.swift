@@ -1,27 +1,18 @@
 //
-//  UserTableViewCell.swift
+//  PostTableViewCell.swift
 //  Users
 //
-//  Created by Eduardo Andrade on 27/06/20.
+//  Created by Eduardo Andrade on 28/06/20.
 //
 
 import UIKit
 
-class UserTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
 
     // MARK: - @IBOutlets & @IBActions
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var emailLabel: UILabel!
-    @IBOutlet private weak var websiteLabel: UILabel!
-    @IBOutlet private weak var phoneLabel: UILabel!
     @IBOutlet private weak var dropShadowView: DropShadowView!
-
-    @IBAction private func seePostsButtonPressed(_ sender: Any) {
-        postsButtonPressed?()
-    }
-
-    // MARK: - Properties
-    var postsButtonPressed: (() -> Void)?
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var bodyLabel: UILabel!
 
     // MARK: - Functions
     override func awakeFromNib() {
@@ -33,7 +24,7 @@ class UserTableViewCell: UITableViewCell {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 7, left: 10, bottom: 7, right: 10))
     }
-
+    
     // MARK: - Custom Functions
     private func setupDropShadowView() {
         dropShadowView.layer.shadowColor = UIColor.black.cgColor
@@ -43,10 +34,8 @@ class UserTableViewCell: UITableViewCell {
         dropShadowView.layer.masksToBounds = false
     }
 
-    func configure(with user: User) {
-        nameLabel.text = user.name
-        emailLabel.text = user.email
-        websiteLabel.text = user.website
-        phoneLabel.text = user.phone
+    func configure(with post: Post) {
+        titleLabel.text = post.title
+        bodyLabel.text = post.body
     }
 }

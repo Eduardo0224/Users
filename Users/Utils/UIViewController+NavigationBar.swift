@@ -20,7 +20,6 @@ extension UIViewController {
         navigationController.navigationBar.titleTextAttributes = navigationBarTitleTextAttributes
         navigationController.navigationBar.largeTitleTextAttributes = navigationBarTitleTextAttributes
         navigationController.navigationBar.tintColor = #colorLiteral(red: 0.2666666667, green: 0.2745098039, blue: 0.4117647059, alpha: 1)
-        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.shadowImage = UIImage()
         navigationItem.title = title
 
@@ -30,5 +29,13 @@ extension UIViewController {
                                                                             .font : UIFont(name: "Futura-Medium",
                                                                                            size: 20) as Any]
         searchController.searchBar.searchTextField.backgroundColor = .white
+    }
+
+    func setupNavigationBar(withTitle title: String) {
+        guard let navigationController = navigationController else { return }
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.navigationBar.barStyle = .default
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationItem.title = title
     }
 }

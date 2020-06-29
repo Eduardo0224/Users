@@ -22,6 +22,7 @@ extension UsersListViewController {
             return UITableViewCell()
         }
         cell.configure(with: viewModel.user(indexPath.row))
+        cell.postsButtonPressed = { self.coordinator?.presentDetail(of: self.viewModel.user(indexPath.row)) }
         return cell
     }
 }

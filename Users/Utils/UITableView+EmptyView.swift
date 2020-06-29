@@ -12,6 +12,7 @@ extension UITableView {
     // MARK: - Enums
     enum EmptyView: String {
         case noUsers = "UsersEmptyList"
+        case noPosts = "PostsEmptyList"
     }
 
     // MARK: - Custom Functions

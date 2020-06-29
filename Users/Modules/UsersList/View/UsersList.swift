@@ -7,13 +7,13 @@
 
 import UIKit
 
-class UsersListViewController: UITableViewController {
+class UsersListViewController: UITableViewController, Storyboarded {
 
     // MARK: - Properties
     /// ViewModel
-    let viewModel = UsersListViewModel()
-    var searchController = UISearchController(searchResultsController: nil)
-    var currentSearchTask: URLSessionTask?
+    private(set) var viewModel = UsersListViewModel()
+    private(set) var coordinator: Coordinator?
+    private var searchController = UISearchController(searchResultsController: nil)
     private let loader = UIActivityIndicatorView(style: .large)
 
     // MARK: - Functions
@@ -21,10 +21,14 @@ class UsersListViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.9764705882, blue: 0.9960784314, alpha: 1)
         setupSearchController()
-        setupNavigationBar(withTitle: "Users App", and: searchController)
         configureTableView()
         registerUserTableViewCell()
         getUsersList()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar(withTitle: "Users App", and: searchController)
     }
 
     // MARK: - Custom Functions
@@ -48,15 +52,14 @@ class UsersListViewController: UITableViewController {
 
     private func getUsersList() {
         show(indicator: loader)
-        viewModel.getUserList { [weak self] in
+        viewModel.getUserList(onComplete: { [weak self] in
             guard let self = self else { return }
             self.hide(indicator: self.loader)
             self.tableView.reloadData()
-        } onFailure: { error in
+        }) { error in
             self.hide(indicator: self.loader)
         }
     }
-
 }
 
 // MARK: - Constants
@@ -64,5 +67,19 @@ extension UsersListViewController {
     struct Constants {
         static let userCell = "UserTableViewCell"
         static let userCellId = "UserCellId"
+    }
+}
+
+// MARK: - IDProtocol
+extension UsersListViewController: InjectDependenciesProtocol {
+    func initiate<T>(with dependencies: [T]) {
+        dependencies.forEach { dependency in
+            switch dependency {
+            case let coordinator as MainCoordinator:
+                self.coordinator = coordinator
+            default:
+                break
+            }
+        }
     }
 }
