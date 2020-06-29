@@ -15,6 +15,10 @@
 		A02E5E7B24A97BAA0092FCC4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5E7924A97BAA0092FCC4 /* PostTableViewCell.swift */; };
 		A02E5E7C24A97BAA0092FCC4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E5E7A24A97BAA0092FCC4 /* PostTableViewCell.xib */; };
 		A02E5E8024A994580092FCC4 /* PostsEmptyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = A02E5E7F24A994570092FCC4 /* PostsEmptyList.xib */; };
+		A02E5E9524AA48E70092FCC4 /* UserCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5E9124AA48E60092FCC4 /* UserCD+CoreDataClass.swift */; };
+		A02E5E9624AA48E70092FCC4 /* UserCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5E9224AA48E70092FCC4 /* UserCD+CoreDataProperties.swift */; };
+		A02E5E9724AA48E70092FCC4 /* PostCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5E9324AA48E70092FCC4 /* PostCD+CoreDataClass.swift */; };
+		A02E5E9824AA48E70092FCC4 /* PostCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5E9424AA48E70092FCC4 /* PostCD+CoreDataProperties.swift */; };
 		A0B3479224A782A7008233A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B3479124A782A7008233A2 /* AppDelegate.swift */; };
 		A0B3479924A782A7008233A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B3479724A782A7008233A2 /* Main.storyboard */; };
 		A0B3479C24A782A7008233A2 /* Users.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0B3479A24A782A7008233A2 /* Users.xcdatamodeld */; };
@@ -56,6 +60,10 @@
 		A02E5E7924A97BAA0092FCC4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		A02E5E7A24A97BAA0092FCC4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		A02E5E7F24A994570092FCC4 /* PostsEmptyList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsEmptyList.xib; sourceTree = "<group>"; };
+		A02E5E9124AA48E60092FCC4 /* UserCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A02E5E9224AA48E70092FCC4 /* UserCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A02E5E9324AA48E70092FCC4 /* PostCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCD+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A02E5E9424AA48E70092FCC4 /* PostCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostCD+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0B3478E24A782A7008233A2 /* Users.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Users.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B3479124A782A7008233A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B3479824A782A7008233A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +176,8 @@
 			children = (
 				A0B347B124A797A1008233A2 /* User.swift */,
 				A0B347CC24A7E53E008233A2 /* UsersMock.swift */,
+				A02E5E9124AA48E60092FCC4 /* UserCD+CoreDataClass.swift */,
+				A02E5E9224AA48E70092FCC4 /* UserCD+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +243,8 @@
 			children = (
 				A02E5E7524A979E70092FCC4 /* Post.swift */,
 				A02E5E7724A97A7E0092FCC4 /* PostsMock.swift */,
+				A02E5E9324AA48E70092FCC4 /* PostCD+CoreDataClass.swift */,
+				A02E5E9424AA48E70092FCC4 /* PostCD+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,6 +371,7 @@
 				A0B347CB24A7D892008233A2 /* UIView+BorderedView.swift in Sources */,
 				A02E5E7824A97A7F0092FCC4 /* PostsMock.swift in Sources */,
 				A0B3479C24A782A7008233A2 /* Users.xcdatamodeld in Sources */,
+				A02E5E9624AA48E70092FCC4 /* UserCD+CoreDataProperties.swift in Sources */,
 				A02E5E7B24A97BAA0092FCC4 /* PostTableViewCell.swift in Sources */,
 				A0B347E724A952C3008233A2 /* InjectDependeciesProtocol.swift in Sources */,
 				A02E5E7224A9794E0092FCC4 /* UserDetail+DataSource.swift in Sources */,
@@ -372,7 +385,9 @@
 				A0B347C524A7B2B6008233A2 /* UsersList+SearchBar.swift in Sources */,
 				A0B347C024A7A772008233A2 /* UsersListViewModel.swift in Sources */,
 				A02E5E7624A979E70092FCC4 /* Post.swift in Sources */,
+				A02E5E9724AA48E70092FCC4 /* PostCD+CoreDataClass.swift in Sources */,
 				A0B347B624A79925008233A2 /* UsersList.swift in Sources */,
+				A02E5E9824AA48E70092FCC4 /* PostCD+CoreDataProperties.swift in Sources */,
 				A0B347D524A93B68008233A2 /* UIViewController+LoaderIndicator.swift in Sources */,
 				A0B347B924A79A88008233A2 /* UserTableViewCell.swift in Sources */,
 				A0B347BE24A7A4E6008233A2 /* UsersList+DataSource.swift in Sources */,
@@ -380,6 +395,7 @@
 				A0B3479224A782A7008233A2 /* AppDelegate.swift in Sources */,
 				A0B347DE24A94943008233A2 /* UserDetail.swift in Sources */,
 				A0B347CF24A7E679008233A2 /* UsersListConnection.swift in Sources */,
+				A02E5E9524AA48E70092FCC4 /* UserCD+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

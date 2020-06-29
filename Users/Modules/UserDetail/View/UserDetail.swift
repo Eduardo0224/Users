@@ -30,6 +30,7 @@ class UserDetailViewController: UIViewController, Storyboarded {
         configureTableView()
         registerUserTableViewCell()
         guard let user = user else { return }
+        viewModel.user = user
         configure(by: user)
         getPosts(of: user)
     }

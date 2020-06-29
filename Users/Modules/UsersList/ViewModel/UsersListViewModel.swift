@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class UsersListViewModel {
 
@@ -15,10 +17,12 @@ class UsersListViewModel {
     lazy var user: (Int) -> User = { self.filteredUsers[$0] }
     private var users = [User]()
     private(set) var filteredUsers = [User]()
+    private let managedContext: NSManagedObjectContext
 
     // MARK: - Inits
     init() {
         // initUserWithMock()
+        managedContext = AppDelegate.shared.persistentContainer.viewContext
     }
 
     // MARK: - Custom Functions
@@ -33,6 +37,25 @@ class UsersListViewModel {
         filteredUsers = users
     }
 
+    private func saveLocally(to users: [User], _ onFailure: (UsersAPI.NetworkError) -> Void) {
+        var usersEntities = [UserCD]()
+        users.forEach {
+            let userEntity = UserCD(context: self.managedContext)
+            userEntity.id = Int16($0.id)
+            userEntity.name = $0.name
+            userEntity.email = $0.email
+            userEntity.phone = $0.phone
+            userEntity.website = $0.website
+            usersEntities.append(userEntity)
+        }
+
+        do {
+            try self.managedContext.save()
+        } catch {
+            onFailure(.unknownError)
+        }
+    }
+
     /**
      ## Get users list
      Makes use of networking to retrieve  the all users
@@ -42,10 +65,36 @@ class UsersListViewModel {
      */
     func getUserList(onComplete: @escaping () -> Void,
                      onFailure: @escaping (UsersAPI.NetworkError) -> Void) {
+
+        let fetchRequestAllUsers: NSFetchRequest<UserCD> = UserCD.fetchRequest()
+        fetchRequestAllUsers.sortDescriptors?.append(.init(key: #keyPath(UserCD.id), ascending: true))
+
+        do {
+            var usersFinded = try managedContext.fetch(fetchRequestAllUsers)
+            usersFinded.sort { $0.id < $1.id }
+            if usersFinded.count > 0 {
+                let users = usersFinded.map { User(id: Int($0.id),
+                                                   name: $0.name ?? "",
+                                                   email: $0.email ?? "",
+                                                   phone: $0.phone ?? "",
+                                                   website: $0.website ?? "") }
+
+                filteredUsers.append(contentsOf: users)
+                self.users.append(contentsOf: filteredUsers)
+                onComplete()
+                return
+            }
+        } catch {
+            onFailure(.unknownError)
+        }
+
         connection.getUsersList { result in
             switch result {
             case .success(let users):
                 if  users.count > 0 {
+
+                    self.saveLocally(to: users, onFailure)
+
                     users.forEach { self.filteredUsers.append($0) }
                     users.forEach { self.users.append($0) }
                 }
